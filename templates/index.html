@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <title>Clever Blocks</title>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+		<link rel="stylesheet" href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+    <script src="{{ url_for('static',filename='blockly/blockly_compressed.js') }}"></script>
+		<script src="{{ url_for('static',filename='blockly/blocks_compressed.js') }}"></script>
+    <script src="{{ url_for('static',filename='blockly/python_compressed.js') }}"></script>
+    <script src="{{ url_for('static',filename='blockly/msg/js/ru.js') }}"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+				<a href="#" class="navbar-brand">Clever Blocks</a>
+				<button class="btn btn-success ml-auto" onclick="postCode()">Полетели!</button></nav>
+
+		<div id="blocklyArea"></div>
+
+		<div id="blocklyDiv" style="position: absolute"></div>
+
+		<xml id="toolbox" style="display: none">
+    	<category name="Клевер" colour="240">
+        <block type="takeoff">
+          <value name="z">
+              <block type="math_number">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+        </block>
+    		<block type="get_to">
+          <value name="x">
+              <block type="math_number">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <value name="y">
+              <block type="math_number">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <value name="z">
+              <block type="math_number">
+                <field name="NUM">1</field>
+              </block>
+            </value>  
+        </block>
+    		<block type="sleep">
+            <value name="t">
+              <block type="math_number">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+        </block>
+    		<block type="land"></block>
+          </category>
+        <category name="Циклы" colour="%{BKY_LOOPS_HUE}">
+          <block type="controls_repeat_ext">
+            <value name="TIMES">
+              <block type="math_number">
+                <field name="NUM">10</field>
+              </block>
+            </value>
+          </block>
+          <block type="controls_whileUntil"></block>
+          <block type="controls_for">
+            <field name="VAR">i</field>
+            <value name="FROM">
+              <block type="math_number">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <value name="TO">
+              <block type="math_number">
+                <field name="NUM">10</field>
+              </block>
+            </value>
+            <value name="BY">
+              <block type="math_number">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+          </block>
+          <block type="controls_forEach"></block>
+          <block type="controls_flow_statements"></block>
+        </category>
+    	<category name="Логика" colour="%{BKY_LOGIC_HUE}">
+            <block type="controls_if"></block>
+            <block type="controls_if">
+              <mutation else="1"></mutation>
+            </block>
+            <block type="controls_if">
+              <mutation elseif="1" else="1"></mutation>
+            </block>
+            <block type="logic_compare"></block>
+            <block type="logic_operation"></block>
+            <block type="logic_negate"></block>
+            <block type="logic_boolean"></block>
+            <block type="logic_null"></block>
+            <block type="logic_ternary"></block>
+        </category>
+        <category name="Математика и числа" colour="%{BKY_MATH_HUE}">
+          <block type="math_number">
+            <field name="NUM">123</field>
+          </block>
+          <block type="math_arithmetic"></block>
+          <block type="math_single"></block>
+          <block type="math_constrain">
+            <value name="LOW">
+              <block type="math_number">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <value name="HIGH">
+              <block type="math_number">
+                <field name="NUM">100</field>
+              </block>
+            </value>
+          </block>
+          <block type="math_random_int">
+            <value name="FROM">
+              <block type="math_number">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <value name="TO">
+              <block type="math_number">
+                <field name="NUM">100</field>
+              </block>
+            </value>
+          </block>
+          <block type="math_random_float"></block>
+          <block type="math_atan2"></block>
+        </category>
+        <sep></sep>
+        <category name="Переменные" custom="VARIABLE" colour="%{BKY_VARIABLES_HUE}">
+        </category>
+        <category name="Функции" custom="PROCEDURE" colour="%{BKY_PROCEDURES_HUE}">
+	   </xml>
+		
+		<script src="{{ url_for('static',filename='js/clever_blocks.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='bootstrap/js/bootstrap.min.js') }}"></script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+.navbar{
+	min-height: 65px;
+}
+
+.navbar-brand{
+	font-size: 26px;
+	text-align: center;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.blocklyTreeRow{
+	height: 28px;
+	line-height: 28px;
+	padding-right: 12px;
+}
+
+#blocklyArea{
+  height: 100%;
+}
+
