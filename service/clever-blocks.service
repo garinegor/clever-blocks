@@ -1,0 +1,13 @@
+[Unit]
+Description=Clever blocks Flask server
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+User=pi
+PermissionsStartOnly=true
+ExecStart=/home/pi/blocks/main.py
+TimeoutSec=600
+Restart=on-failure
+RuntimeDirectoryMode=755
