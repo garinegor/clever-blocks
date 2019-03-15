@@ -7,7 +7,7 @@ WantedBy=multi-user.target
 [Service]
 User=pi
 PermissionsStartOnly=true
-ExecStart=/home/pi/blocks/main.py
+ExecStart=/home/pi/clever-blocks/main.py
 TimeoutSec=600
 Restart=on-failure
 RuntimeDirectoryMode=755

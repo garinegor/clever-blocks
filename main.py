@@ -1,3 +1,4 @@
+#!/usr/bin/python
 from flask import Flask, request, render_template
 from clever import run_code
 
@@ -14,4 +15,4 @@ def login():
     return "oke"
         
 if __name__=="__main__":
-    app.run()
+    app.run(host="0.0.0.0")
